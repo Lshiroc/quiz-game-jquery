@@ -1,0 +1,205 @@
+@font-face {
+  font-family: "Satoshi-Light";
+  src: url("./assets/satoshi/Satoshi-Light.woff2") format("woff2"), url("./assets/satoshi/Satoshi-Light.woff") format("woff"), url("./assets/satoshi/Satoshi-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi-LightItalic";
+  src: url("./assets/satoshi/Satoshi-LightItalic.woff2") format("woff2"), url("./assets/satoshi/Satoshi-LightItalic.woff") format("woff"), url("./assets/satoshi/Satoshi-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Satoshi-Regular";
+  src: url("./assets/satoshi/Satoshi-Regular.woff2") format("woff2"), url("./assets/satoshi/Satoshi-Regular.woff") format("woff"), url("./assets/satoshi/Satoshi-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi-Italic";
+  src: url("./assets/satoshi/Satoshi-Italic.woff2") format("woff2"), url("./assets/satoshi/Satoshi-Italic.woff") format("woff"), url("./assets/satoshi/Satoshi-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Satoshi-Medium";
+  src: url("./assets/satoshi/Satoshi-Medium.woff2") format("woff2"), url("./assets/satoshi/Satoshi-Medium.woff") format("woff"), url("./assets/satoshi/Satoshi-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi-MediumItalic";
+  src: url("./assets/satoshi/Satoshi-MediumItalic.woff2") format("woff2"), url("./assets/satoshi/Satoshi-MediumItalic.woff") format("woff"), url("./assets/satoshi/Satoshi-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Satoshi-Bold";
+  src: url("./assets/satoshi/Satoshi-Bold.woff2") format("woff2"), url("./assets/satoshi/Satoshi-Bold.woff") format("woff"), url("./assets/satoshi/Satoshi-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi-BoldItalic";
+  src: url("./assets/satoshi/Satoshi-BoldItalic.woff2") format("woff2"), url("./assets/satoshi/Satoshi-BoldItalic.woff") format("woff"), url("./assets/satoshi/Satoshi-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Satoshi-Black";
+  src: url("./assets/satoshi/Satoshi-Black.woff2") format("woff2"), url("./assets/satoshi/Satoshi-Black.woff") format("woff"), url("./assets/satoshi/Satoshi-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi-BlackItalic";
+  src: url("./assets/satoshi/Satoshi-BlackItalic.woff2") format("woff2"), url("./assets/satoshi/Satoshi-BlackItalic.woff") format("woff"), url("./assets/satoshi/Satoshi-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-display: swap;
+  font-style: italic;
+}
+*, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  height: 100vh;
+  font-size: 100%;
+  font-family: "Satoshi-Medium";
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.navbar .title {
+  padding: 10px 5px;
+  font-size: 55px;
+  text-align: center;
+}
+
+.main {
+  justify-content: center;
+  align-content: center;
+}
+
+.main .game {
+  width: 100%;
+  height: 80%;
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .game .questionBox {
+  width: 600px;
+  border-radius: 25px;
+  background-color: rgb(255, 211, 218);
+  box-shadow: 0 0 4px 0 rgb(255, 183, 195), 0 0 4px 0px rgb(255, 149, 165), 0 0 30px 1px rgb(255, 211, 218);
+  padding: 20px 10px;
+}
+.main .game .questionBox .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.main .game .questionBox .top .prev, .main .game .questionBox .top .next {
+  cursor: pointer;
+}
+.main .game .questionBox .top .prev .fa-solid, .main .game .questionBox .top .next .fa-solid {
+  font-size: 32px;
+}
+.main .game .questionBox .question {
+  max-width: 700px;
+  font-size: 32px;
+  text-align: center;
+  text-wrap: balance;
+  margin-left: 5px;
+  margin-right: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.main .game .questionBox .options {
+  padding: 0 30px;
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  row-gap: 10px;
+  margin-bottom: 30px;
+}
+@keyframes shaking {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.main .game .questionBox .options .option {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0 10px;
+  transition: 0.3s;
+  background: 0 0 0 transparent;
+}
+.main .game .questionBox .options .option.wrong {
+  animation: shaking 0.5s ease-in-out;
+}
+.main .game .questionBox .options .option.selected {
+  box-shadow: inset 0 0 0 30px rgb(255, 231, 235);
+  border-radius: 30px;
+}
+.main .game .questionBox .options .option.correct {
+  box-shadow: inset 0 0 0 30px rgb(110, 194, 46);
+  border-radius: 30px;
+}
+.main .game .questionBox .options .option .optionText {
+  margin-left: 10px;
+}
+.main .game .questionBox .submit, .main .game .questionBox .nextQuestion, .main .game .questionBox .tryagain {
+  text-align: center;
+  padding: 10px 20px;
+  background: #fff5f5;
+  border-radius: 14px;
+  font-size: 18px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: 0.3s;
+}
+.main .game .questionBox .submit.passive {
+  opacity: 0.6;
+}
+.main .game .questionBox .nextQuestion {
+  display: none;
+}
+.main .game .questionBox .tryagain {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
