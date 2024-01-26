@@ -82,12 +82,34 @@ body {
   font-family: "Satoshi-Medium";
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
+  color: rgb(12, 5, 68);
 }
 
 .navbar .title {
   padding: 10px 5px;
   font-size: 55px;
   text-align: center;
+}
+
+.startMenu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.startMenu .startbtn {
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  background-color: rgb(255, 183, 195);
+  border-radius: 20px;
+  font-size: 23px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 0 4px 0 rgb(255, 183, 195);
+}
+.startMenu .startbtn:hover {
+  transform: scale(1.02);
 }
 
 .main {
@@ -98,7 +120,7 @@ body {
 .main .game {
   width: 100%;
   height: 80%;
-  padding: 0 15px;
+  padding: 0 25px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,7 +147,6 @@ body {
   font-size: 32px;
 }
 .main .game .questionBox .question {
-  max-width: 700px;
   font-size: 32px;
   text-align: center;
   text-wrap: balance;
@@ -202,4 +223,18 @@ body {
 }
 .main .game .questionBox .tryagain {
   display: none;
+}
+
+@media screen and (max-width: 728px) {
+  .main .game .questionBox {
+    width: 100%;
+    max-width: 100%;
+  }
+  .main .game .questionBox .question {
+    font-size: 26px;
+  }
+  .main .game .questionBox .options .option {
+    display: flex;
+    justify-content: center;
+  }
 }/*# sourceMappingURL=style.css.map */
