@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-d%)%*#&lwi+hp4cu7%)u+@)%vw+2!1mk*%@m!(7=yp0$y(_r0b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [".vercel.app", "now.sh", "127.0.0.1", "localhost"]
 
 
 # Application definition
@@ -53,8 +53,7 @@ MIDDLEWARE = [
 CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = [
-    'http://127.0.0.1:5500',
-    'http://localhost:5500'
+    'http://quiz-game-jquery.vercel.app',
 ]
 
 ROOT_URLCONF = 'back.urls'
