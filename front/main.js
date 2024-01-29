@@ -1,7 +1,7 @@
 let questions;
 
 function getQuestions() {
-    $.get('https://quiz-game-jquery.vercel.app/questions/get',
+    $.get('https://quiz-game-jquery-back.vercel.app/questions/get',
         function(data, success){
             if(success) {
                 questions = data.questions;
