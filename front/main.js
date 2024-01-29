@@ -1,15 +1,20 @@
 let questions;
 
-function getQuestions() {
-    $.get('https://quiz-game-jquery-back.vercel.app/questions/get/',
+async function getQuestions() {
+    // http://localhost:8000/questions/get/
+    let resp = await $.get('https://quiz-game-jquery-back.vercel.app/questions/get/',
         function(data, success){
             if(success) {
                 questions = data.questions;
             }
         })
-}
 
-getQuestions();
+    if(resp) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 let questionIndex = 0;
 let selectedAnswer = {
@@ -34,15 +39,25 @@ function showQuestion(question, options, answer) {
 }
 
 $(function(){
-    $('.game').hide();
+    $('.startbtn').click(async function(){
+        if(questions) {
+            $('.startMenu').hide();
+            $('.game').css("display", "flex");
+            showQuestion(questions[0].question, questions[0].options, questions[0].answer);
+        } else {
+            $('#loading').show();
+            $('#loading').css("animation", "load 1s infinite ease-in-out");
+            let resp = await getQuestions();
+            if(resp) {
+                $("#loading").hide();
+                $("#loading").css("animation", "none");
+                $('.startbtn').click();
+            }
+        }
 
-    $('.startbtn').click(function(){
-        $('.startMenu').hide();
-        $('.game').show();
-
-        showQuestion(questions[0].question, questions[0].options, questions[0].answer);
     })
 })
+
 
 $(document).on('click', '.option', function(){
     if(selectedAnswer.correct) return;
@@ -76,6 +91,8 @@ $(document).on('click', '.submit', function(){
     }
 })
 
+
+// Next button functionality
 $(document).on('click', '.nextQuestion', function() {
     if(questionIndex != questions.length - 1) {
         questionIndex++;
@@ -88,6 +105,8 @@ $(document).on('click', '.nextQuestion', function() {
     }
 })
 
+
+// Try again after finishing
 $('.tryagain').on('click', function(){
     selectedAnswer.answer = null;
     selectedAnswer.correct = false;
@@ -98,6 +117,7 @@ $('.tryagain').on('click', function(){
     $('.submit').addClass('passive');
 })
 
+// Go to previous question if possible
 $(document).on('click', '.prev', function(){
     if(questionIndex != 0) {
         questionIndex--;
@@ -111,6 +131,7 @@ $(document).on('click', '.prev', function(){
     }
 })
 
+// Go to next questions if possible
 $(document).on('click', '.next', function(){
     if(questionIndex != questions.length - 1) {
         questionIndex++;
