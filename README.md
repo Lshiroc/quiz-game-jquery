@@ -1,7 +1,7 @@
 # Quiz Game with jQuery
 ![Screenshot](./screenshot.png)
 [Live Website - Quiz Game](https://quiz-game-jquery.vercel.app)<br/>
-[Source Code](https://https://github.com/Lshiroc/quiz-game-jquery)
+[Source Code](https://github.com/Lshiroc/quiz-game-jquery)
 
 ## Tools
 Made using **jQuery** and **Django** with **Python**. Django backend contains a simple endpoint containing all the questions frontend needs to get.
