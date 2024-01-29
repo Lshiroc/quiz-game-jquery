@@ -1,2 +1,2 @@
-yes | pip install -r requirements.txt
-yes | python3.9 manage.py collectstatic
+pip install -r requirements.txt
+echo "yes" | python3.9 manage.py collectstatic
